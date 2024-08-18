@@ -25,6 +25,11 @@ import UIKit
  */
 open class PanModalPresentationController: UIPresentationController {
 
+    private enum PanGestureState {
+        case none
+        case slip
+        case drag
+    }
     /**
      Enum representing the possible presentation states
      */
@@ -43,6 +48,7 @@ open class PanModalPresentationController: UIPresentationController {
     }
 
     // MARK: - Properties
+    private var panGestureState: PanGestureState = .none
 
     /**
      A flag to track if the presented view is animating
@@ -304,6 +310,7 @@ public extension PanModalPresentationController {
         adjustPresentedViewFrame()
         observe(scrollView: presentable?.panScrollable)
         configureScrollViewInsets()
+        print(presentable?.panScrollable)
     }
 
 }
@@ -475,13 +482,33 @@ private extension PanModalPresentationController {
      The designated function for handling pan gesture events
      */
     @objc func didPanOnPresentedView(_ recognizer: UIPanGestureRecognizer) {
-
-        guard
-            shouldRespond(to: recognizer),
-            let containerView = containerView
-            else {
-                recognizer.setTranslation(.zero, in: recognizer.view)
-                return
+        guard let containerView else {
+            recognizer.setTranslation(.zero, in: recognizer.view)
+            return
+        }
+        if recognizer.state == .began {
+            let location = recognizer.location(in: recognizer.view)
+            let velocity = recognizer.velocity(in: presentedView)
+            panGestureState = location.x <= 48 && velocity.x > 0 ? .slip : .drag
+        }
+        switch panGestureState {
+        case .drag:
+            didPanVertically(recognizer, containerView: containerView)
+        case .slip:
+            didPanHorizontally(recognizer, containerView: containerView)
+        default:
+            break
+        }
+        
+        if [.cancelled, .ended].contains(recognizer.state) {
+            panGestureState = .none
+        }
+    }
+    
+    private func didPanVertically(_ recognizer: UIPanGestureRecognizer, containerView: UIView) {
+        guard shouldRespond(to: recognizer) else {
+            recognizer.setTranslation(.zero, in: recognizer.view)
+            return
         }
 
         switch recognizer.state {
@@ -679,6 +706,35 @@ private extension PanModalPresentationController {
         guard let nearestVal = values.min(by: { abs(number - $0) < abs(number - $1) })
             else { return number }
         return nearestVal
+    }
+    
+    private func didPanHorizontally(_ recognizer: UIPanGestureRecognizer, containerView: UIView) {
+        let percent = 1.0 - (presentedView.frame.origin.x / presentedView.frame.width)
+        if presentable?.panScrollable?.panGestureRecognizer.isEnabled == true {
+            presentable?.panScrollable?.panGestureRecognizer.isEnabled = false
+        }
+        if [.cancelled, .ended].contains(recognizer.state) {
+            presentable?.panScrollable?.panGestureRecognizer.isEnabled = true
+            let triggeredDismissing = percent <= 0.6
+            PanModalAnimator.animate({ [weak self] in
+                self?.presentedView.frame.origin.x = triggeredDismissing ? self?.presentedView.frame.width ?? 0 : 0
+                self?.backgroundView.dimState = .percent(triggeredDismissing ? 0 : 1)
+            }, config: presentable, springDamping: 1) { [weak self] didComplete in
+                if didComplete && triggeredDismissing {
+                    self?.presentedViewController.dismiss(animated: false)
+                }
+            }
+            return
+        }
+        
+        let yDisplacement = panGestureRecognizer.translation(in: presentedView).x
+        
+        presentedView.frame.origin.x = max(yDisplacement, 0)
+        /**
+         Once presentedView is translated below shortForm, calculate yPos relative to bottom of screen
+         and apply percentage to backgroundView alpha
+         */
+        backgroundView.dimState = .percent(percent)
     }
 }
 

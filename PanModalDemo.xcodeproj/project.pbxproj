@@ -37,6 +37,7 @@
 		74C072A5220BA76D00124CE1 /* PanModalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C072A4220BA76D00124CE1 /* PanModalHeight.swift */; };
 		74C072A7220BA78800124CE1 /* PanModalPresentable+LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C072A6220BA78800124CE1 /* PanModalPresentable+LayoutHelpers.swift */; };
 		74C072AA220BA82A00124CE1 /* UIViewController+PanModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C072A9220BA82A00124CE1 /* UIViewController+PanModalPresenter.swift */; };
+		86CF83462C718A31006A0C2B /* BasicSUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CF83452C718A31006A0C2B /* BasicSUI.swift */; };
 		943904EB2226354100859537 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943904EA2226354100859537 /* BasicViewController.swift */; };
 		943904ED2226366700859537 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943904EC2226366700859537 /* AlertViewController.swift */; };
 		943904EF2226383700859537 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943904EE2226383700859537 /* NavigationController.swift */; };
@@ -109,6 +110,7 @@
 		74C072A4220BA76D00124CE1 /* PanModalHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalHeight.swift; sourceTree = "<group>"; };
 		74C072A6220BA78800124CE1 /* PanModalPresentable+LayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PanModalPresentable+LayoutHelpers.swift"; sourceTree = "<group>"; };
 		74C072A9220BA82A00124CE1 /* UIViewController+PanModalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PanModalPresenter.swift"; sourceTree = "<group>"; };
+		86CF83452C718A31006A0C2B /* BasicSUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSUI.swift; sourceTree = "<group>"; };
 		943904EA2226354100859537 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
 		943904EC2226366700859537 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		943904EE2226383700859537 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -240,6 +242,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		86CF83442C718A23006A0C2B /* BasicSUI */ = {
+			isa = PBXGroup;
+			children = (
+				86CF83452C718A31006A0C2B /* BasicSUI.swift */,
+			);
+			path = BasicSUI;
+			sourceTree = "<group>";
+		};
 		944EBA2B227BB7D900C4C97B /* Basic */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +338,7 @@
 		DC139079216D9AAA007A3E64 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				86CF83442C718A23006A0C2B /* BasicSUI */,
 				944EBA2B227BB7D900C4C97B /* Basic */,
 				944EBA2C227BB7E100C4C97B /* Full Screen */,
 				DC3B2EBB222A5882000C8A4A /* Alert */,
@@ -559,6 +570,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86CF83462C718A31006A0C2B /* BasicSUI.swift in Sources */,
 				DC3B2EBA222A560A000C8A4A /* TransientAlertViewController.swift in Sources */,
 				743CABB42225FE7700634A5A /* UserGroupMemberPresentable.swift in Sources */,
 				74C072A3220BA6E500124CE1 /* PanModalAnimator.swift in Sources */,
@@ -614,13 +626,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6UF7FN999R;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PanModal/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -643,13 +655,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6UF7FN999R;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PanModal/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -671,7 +683,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -691,7 +703,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -830,9 +842,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UF7FN999R;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Sample/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -851,9 +863,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UF7FN999R;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Sample/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

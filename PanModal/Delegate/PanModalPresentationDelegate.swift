@@ -26,6 +26,8 @@ public class PanModalPresentationDelegate: NSObject {
     public static var `default`: PanModalPresentationDelegate = {
         return PanModalPresentationDelegate()
     }()
+    
+    public var dismissed: (() -> Void)?
 
 }
 
@@ -76,6 +78,8 @@ extension PanModalPresentationDelegate: UIAdaptivePresentationControllerDelegate
     public func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .none
     }
+    
+
 
 }
 #endif

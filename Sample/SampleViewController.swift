@@ -25,6 +25,7 @@ class SampleViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         tableView.tableFooterView = UIView()
         tableView.separatorInset = .zero
+        tableView.backgroundColor = .blue
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -67,6 +68,7 @@ private extension SampleViewController {
 
     enum RowType: Int, CaseIterable {
         case basic
+        case basicSUI
         case fullScreen
         case alert
         case transientAlert
@@ -78,6 +80,7 @@ private extension SampleViewController {
         var presentable: RowPresentable {
             switch self {
             case .basic: return Basic()
+            case .basicSUI: return BasicSUI()
             case .fullScreen: return FullScreen()
             case .alert: return Alert()
             case .transientAlert: return TransientAlert()
@@ -90,6 +93,11 @@ private extension SampleViewController {
         struct Basic: RowPresentable {
             let string: String = "Basic"
             let rowVC: PanModalPresentable.LayoutType = BasicViewController()
+        }
+        
+        struct BasicSUI: RowPresentable {
+            let string: String = "BasicSUI"
+            let rowVC: PanModalPresentable.LayoutType = HostingController()
         }
 
         struct FullScreen: RowPresentable {

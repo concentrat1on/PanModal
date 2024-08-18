@@ -122,7 +122,7 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     func panModalDidDismiss() {
-
+        
     }
 }
 #endif

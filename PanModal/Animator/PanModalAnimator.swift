@@ -23,9 +23,16 @@ struct PanModalAnimator {
     static func animate(_ animations: @escaping PanModalPresentable.AnimationBlockType,
                         config: PanModalPresentable?,
                         _ completion: PanModalPresentable.AnimationCompletionType? = nil) {
+        let springDamping = config?.springDamping ?? 1.0
+        PanModalAnimator.animate(animations, config: config, springDamping: springDamping, completion)
+    }
+    
+    static func animate(_ animations: @escaping PanModalPresentable.AnimationBlockType,
+                        config: PanModalPresentable?,
+                        springDamping: CGFloat,
+                        _ completion: PanModalPresentable.AnimationCompletionType? = nil) {
 
         let transitionDuration = config?.transitionDuration ?? Constants.defaultTransitionDuration
-        let springDamping = config?.springDamping ?? 1.0
         let animationOptions = config?.transitionAnimationOptions ?? []
 
         UIView.animate(withDuration: transitionDuration,
