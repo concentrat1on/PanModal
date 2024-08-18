@@ -2,7 +2,7 @@
 ### PanModal is an elegant and highly customizable presentation API for constructing bottom sheet modals on iOS.
 
 <p align="center">
-    <img src="https://github.com/slackhq/PanModal/raw/master/Screenshots/panModal.gif" width="30%" height="30%" alt="Screenshot Preview" />
+    <img src="https://github.com/concentrat1on/PanModal/raw/master/Screenshots/panModal.gif" width="30%" height="30%" alt="Screenshot Preview" />
 </p>
 
 <p align="center">
@@ -24,12 +24,6 @@
   • <a href="#license">License</a>
 </p>
 
-<p align="center">
-Read our <a href="https://slack.engineering/panmodal-better-support-for-thumb-accessibility-on-slack-mobile-52b2a7596031" target="_blank">blog</a> on how Slack is getting more :thumbsup: with PanModal
-
-Swift 4.2 support can be found on the `Swift4.2` branch.
-</p>
-
 ## Features
 
 * Supports any type of `UIViewController`
@@ -38,27 +32,15 @@ Swift 4.2 support can be found on the `Swift4.2` branch.
 
 ## Compatibility
 
-PanModal requires **iOS 10+** and is compatible with **Swift 4.2** projects.
+PanModal requires **iOS 13+** with SwiftUI ScrollView interaction in Demo Project.
 
 ## Installation
-
-* <a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a>:
-
-```ruby
-pod 'PanModal'
-```
-
-* <a href="https://github.com/Carthage/Carthage" target="_blank">Carthage</a>:
-
-```ruby
-github "slackhq/PanModal"
-```
 
 * <a href="https://swift.org/package-manager/" target="_blank">Swift Package Manager</a>:
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/slackhq/PanModal.git", .exact("1.2.6")),
+  .package(url: "https://github.com/concentrat1on/PanModal", .exact("1.2.6")),
 ],
 ```
 
@@ -130,24 +112,22 @@ var shortFormHeight: PanModalHeight {
 
 ### Sample App
 
-Check out the [Sample App](https://github.com/slackhq/PanModal/tree/master/Sample) for more complex configurations of `PanModalPresentable`, including navigation controllers and stacked modals.
+Check out the [Sample App](https://github.com/concentrat1on/PanModal/tree/master/Sample) for more complex configurations of `PanModalPresentable`, including navigation controllers and stacked modals.
 
 ## Documentation
 Option + click on any of PanModal's methods or notes for detailed documentation.
 
 <p align="left">
-    <img src="https://github.com/slackhq/PanModal/blob/master/Screenshots/documentation.png" width="50%" height="50%" alt="Screenshot Preview" />
+    <img src="https://github.com/concentrat1on/PanModal/blob/master/Screenshots/documentation.png" width="50%" height="50%" alt="Screenshot Preview" />
 </p>
 
 ## Contributing
 
-We're glad to be open sourcing this library. We use it in numerous places within the slack app and expect it to be easy to use as well as modify; we've added extensive documentation within the code to support that.
+We will only be fixing critical bugs, thus, for any non-critical issues or feature requests we hope to be able to rely on the community using the library to add what they need. For more information, please read the [contributing guidelines](https://github.com/concentrat1on/PanModal/blob/master/CONTRIBUTING.md).
 
-We will only be fixing critical bugs, thus, for any non-critical issues or feature requests we hope to be able to rely on the community using the library to add what they need. For more information, please read the [contributing guidelines](https://github.com/slackhq/PanModal/blob/master/CONTRIBUTING.md).
+## Authors and fork editor
 
-## Authors
-
-[Stephen Sowole](https://github.com/ste57) • [Tosin Afolabi](https://github.com/tosinaf)
+[Stephen Sowole](https://github.com/ste57) • [Tosin Afolabi](https://github.com/tosinaf) • [Illia Topor](https://github.com/concentrat1on) 
 
 ## License
 
