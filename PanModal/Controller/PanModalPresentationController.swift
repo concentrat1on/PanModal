@@ -489,7 +489,13 @@ private extension PanModalPresentationController {
         if recognizer.state == .began {
             let location = recognizer.location(in: recognizer.view)
             let velocity = recognizer.velocity(in: presentedView)
-            panGestureState = location.x <= 48 && velocity.x > 0 ? .slip : .drag
+            let allowsSwipeToDismiss: Bool
+            if let presentable = presentable as? UINavigationController & PanModalPresentable {
+                allowsSwipeToDismiss = presentable.allowsSwipeToDismiss && presentable.viewControllers.count == 1
+            } else {
+                allowsSwipeToDismiss = presentable?.allowsSwipeToDismiss == true
+            }
+            panGestureState = location.x <= presentable?.rangeSwipeToDismiss ?? 48 && velocity.x > 0 && allowsSwipeToDismiss ? .slip : .drag
         }
         switch panGestureState {
         case .drag:

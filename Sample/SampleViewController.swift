@@ -25,7 +25,6 @@ class SampleViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         tableView.tableFooterView = UIView()
         tableView.separatorInset = .zero
-        tableView.backgroundColor = .blue
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

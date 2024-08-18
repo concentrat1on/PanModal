@@ -80,6 +80,14 @@ public extension PanModalPresentable where Self: UIViewController {
     var allowsTapToDismiss: Bool {
         return true
     }
+    
+    var allowsSwipeToDismiss: Bool {
+        return false
+    }
+    
+    var rangeSwipeToDismiss: CGFloat {
+        return 48
+    }
 
     var isUserInteractionEnabled: Bool {
         return true

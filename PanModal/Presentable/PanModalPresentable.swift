@@ -141,6 +141,20 @@ public protocol PanModalPresentable: AnyObject {
      Default value is true.
      */
     var allowsTapToDismiss: Bool { get }
+    
+    /**
+     A flag to determine if dismissal should be initiated when swiping left to right on the presented view.
+
+     Default value is false.
+     */
+    var allowsSwipeToDismiss: Bool { get }
+    
+    /**
+     A flag to determine minimal range to start swiping left to right on the presented view.
+
+     Default value is 48.
+     */
+    var rangeSwipeToDismiss: CGFloat { get }
 
     /**
      A flag to toggle user interactions on the container view.
