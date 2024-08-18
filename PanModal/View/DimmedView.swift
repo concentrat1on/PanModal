@@ -22,6 +22,11 @@ public class DimmedView: UIView {
         case off
         case percent(CGFloat)
     }
+    
+    public enum DimConfig {
+        case backgroundColor(color: UIColor)
+        case visualEffect(effect: UIBlurEffect, opacity: Float)
+    }
 
     // MARK: - Properties
 
@@ -55,10 +60,18 @@ public class DimmedView: UIView {
 
     // MARK: - Initializers
 
-    init(dimColor: UIColor = UIColor.black.withAlphaComponent(0.7)) {
-        super.init(frame: .zero)
+    init(frame: CGRect, dimConfig: DimConfig = .backgroundColor(color: UIColor.black.withAlphaComponent(0.7))) {
+        super.init(frame: frame)
         alpha = 0.0
-        backgroundColor = dimColor
+        switch dimConfig {
+        case .backgroundColor(color: let color):
+            backgroundColor = color
+        case .visualEffect(effect: let effect, opacity: let opacity):
+            let effectView = UIVisualEffectView(frame: frame)
+            addSubview(effectView)
+            effectView.effect = effect
+            effectView.layer.opacity = opacity
+        }
         addGestureRecognizer(tapGesture)
     }
 

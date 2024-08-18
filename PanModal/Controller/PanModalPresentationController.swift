@@ -111,11 +111,12 @@ open class PanModalPresentationController: UIPresentationController {
      Background view used as an overlay over the presenting view
      */
     private lazy var backgroundView: DimmedView = {
+        let frame = containerView?.frame ?? .zero
         let view: DimmedView
-        if let color = presentable?.panModalBackgroundColor {
-            view = DimmedView(dimColor: color)
+        if let config = presentable?.panModalBackgroundConfig {
+            view = DimmedView(frame: frame, dimConfig: config)
         } else {
-            view = DimmedView()
+            view = DimmedView(frame: frame)
         }
         view.didTap = { [weak self] _ in
             if self?.presentable?.allowsTapToDismiss == true {

@@ -47,8 +47,8 @@ public extension PanModalPresentable where Self: UIViewController {
         return [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState]
     }
 
-    var panModalBackgroundColor: UIColor {
-        return UIColor.black.withAlphaComponent(0.7)
+    var panModalBackgroundConfig: DimmedView.DimConfig {
+        return .backgroundColor(color: UIColor.black.withAlphaComponent(0.7))
     }
 
     var dragIndicatorBackgroundColor: UIColor {

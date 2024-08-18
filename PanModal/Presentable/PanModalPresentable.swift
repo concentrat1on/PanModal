@@ -87,13 +87,13 @@ public protocol PanModalPresentable: AnyObject {
     var transitionAnimationOptions: UIView.AnimationOptions { get }
 
     /**
-     The background view color.
+     The background view color or blur.
 
      - Note: This is only utilized at the very start of the transition.
 
      Default Value is black with alpha component 0.7.
     */
-    var panModalBackgroundColor: UIColor { get }
+    var panModalBackgroundConfig: DimmedView.DimConfig { get }
 
     /**
      The drag indicator view color.
