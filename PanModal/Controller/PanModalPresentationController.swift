@@ -311,7 +311,6 @@ public extension PanModalPresentationController {
         adjustPresentedViewFrame()
         observe(scrollView: presentable?.panScrollable)
         configureScrollViewInsets()
-        print(presentable?.panScrollable)
     }
 
 }
@@ -492,7 +491,7 @@ private extension PanModalPresentationController {
             let velocity = recognizer.velocity(in: presentedView)
             let allowsSwipeToDismiss: Bool
             if let presentable = presentable as? UINavigationController & PanModalPresentable {
-                allowsSwipeToDismiss = presentable.allowsSwipeToDismiss && presentable.viewControllers.count == 1
+                allowsSwipeToDismiss = presentable.allowsSwipeToDismiss && (presentable.viewControllers.count == 1 || presentable.interactivePopGestureRecognizer?.isEnabled == false)
             } else {
                 allowsSwipeToDismiss = presentable?.allowsSwipeToDismiss == true
             }
