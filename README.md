@@ -18,7 +18,7 @@
   • <a href="#usage">Usage</a>
   • <a href="#documentation">Documentation</a>
   • <a href="#contributing">Contributing</a>
-  • <a href="#authors">Authors and Fork editor</a>
+  • <a href="#authors">Authors</a>
   • <a href="#license">License</a>
 </p>
 
@@ -123,9 +123,9 @@ Option + click on any of PanModal's methods or notes for detailed documentation.
 
 We will only be fixing critical bugs, thus, for any non-critical issues or feature requests we hope to be able to rely on the community using the library to add what they need. For more information, please read the [contributing guidelines](https://github.com/concentrat1on/PanModal/blob/master/CONTRIBUTING.md).
 
-## Authors and Fork editor
+## Authors
 
-[Stephen Sowole](https://github.com/ste57) • [Tosin Afolabi](https://github.com/tosinaf) • [Illia Topor](https://github.com/concentrat1on) 
+[Stephen Sowole](https://github.com/ste57) • [Tosin Afolabi](https://github.com/tosinaf) • Fork editor [Illia Topor](https://github.com/concentrat1on) 
 
 ## License
 
