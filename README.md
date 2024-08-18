@@ -6,10 +6,8 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Platform-iOS_10+-green.svg" alt="Platform: iOS 10.0+" />
+    <img src="https://img.shields.io/badge/Platform-iOS_13+-green.svg" alt="Platform: iOS 13.0+" />
     <a href="https://developer.apple.com/swift" target="_blank"><img src="https://img.shields.io/badge/Language-Swift_5-blueviolet.svg" alt="Language: Swift 5" /></a>
-    <a href="https://cocoapods.org/pods/PanModal" target="_blank"><img src="https://img.shields.io/badge/CocoaPods-v1.0-red.svg" alt="CocoaPods compatible" /></a>
-    <a href="https://github.com/Carthage/Carthage" target="_blank"><img src="https://img.shields.io/badge/Carthage-compatible-blue.svg" alt="Carthage compatible" /></a>
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" />
 </p>
 
@@ -20,7 +18,7 @@
   • <a href="#usage">Usage</a>
   • <a href="#documentation">Documentation</a>
   • <a href="#contributing">Contributing</a>
-  • <a href="#authors">Authors</a>
+  • <a href="#authors">Authors and Fork editor</a>
   • <a href="#license">License</a>
 </p>
 
@@ -125,7 +123,7 @@ Option + click on any of PanModal's methods or notes for detailed documentation.
 
 We will only be fixing critical bugs, thus, for any non-critical issues or feature requests we hope to be able to rely on the community using the library to add what they need. For more information, please read the [contributing guidelines](https://github.com/concentrat1on/PanModal/blob/master/CONTRIBUTING.md).
 
-## Authors and fork editor
+## Authors and Fork editor
 
 [Stephen Sowole](https://github.com/ste57) • [Tosin Afolabi](https://github.com/tosinaf) • [Illia Topor](https://github.com/concentrat1on) 
 
